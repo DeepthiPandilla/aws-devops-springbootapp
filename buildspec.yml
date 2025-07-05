@@ -10,7 +10,7 @@ phases:
       #- aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 211125353371.dkr.ecr.us-east-1.amazonaws.com
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/g6x9e4z0
       # Define repository URI and image tag
-      - REPOSITORY_URI=public.ecr.aws/g6x9e4z0
+      - REPOSITORY_URI=public.ecr.aws/g6x9e4z0/aws-springboot-repo
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
